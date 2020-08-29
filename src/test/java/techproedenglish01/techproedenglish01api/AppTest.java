@@ -88,7 +88,7 @@ public class AppTest
 		response.prettyPrint();		
 		response.then().assertThat().statusCode(404);		
 		assertFalse(response.asString().contains("Suleyman"));		
-		assertTrue(response.asString().contains("Not FoundXXXX"));	
+		assertTrue(response.asString().contains("Not Found"));	
 	}
 
 }
