@@ -101,7 +101,7 @@
 			<artifactId>maven-compiler-plugin</artifactId>
 			<configuration>
 				<includes>
-					<include>src/test/java/*/.java</include>
+					<include>src/test/java/**/*.java</include>
 				</includes>
 			</configuration>
 		</plugin>
