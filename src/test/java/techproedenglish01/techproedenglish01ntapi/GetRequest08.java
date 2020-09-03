@@ -1,4 +1,4 @@
-package techproedenglish01.techproedenglish01api;
+package techproedenglish01.techproedenglish01ntapi;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,6 +9,7 @@ import org.testng.asserts.SoftAssert;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import techproedenglish01.techproedenglish01api.TestBase;
 
 import static io.restassured.RestAssured.*;
 
@@ -59,11 +60,10 @@ public class GetRequest08 extends TestBase {
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(json.getString("data[2].employee_name"), "Ashton Cox");
 		
-		
 		//Print the first 5 employee names on the console
 		System.out.println(json.getString("data[0,1,2,3,4].employee_name"));
 		
-		//Next class I will teach, please remind me!!!!!
+		//Next class I will teach how to assert multiple assertions, please remind me!!!!!
 		
 		//Print the name of last employee on the console
 		System.out.println(json.getString("data[-1].employee_name"));

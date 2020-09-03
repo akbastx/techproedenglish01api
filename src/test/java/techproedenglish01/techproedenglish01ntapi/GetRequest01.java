@@ -1,4 +1,4 @@
-package techproedenglish01.techproedenglish01api;
+package techproedenglish01.techproedenglish01ntapi;
 
 import org.junit.Test;
 import io.restassured.response.Response;

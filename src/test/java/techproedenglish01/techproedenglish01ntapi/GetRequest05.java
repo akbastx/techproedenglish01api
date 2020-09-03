@@ -1,10 +1,11 @@
-package techproedenglish01.techproedenglish01api;
+package techproedenglish01.techproedenglish01ntapi;
 
 import static org.hamcrest.Matchers.*;
 import org.junit.Test;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import techproedenglish01.techproedenglish01api.TestBase;
 
 import static io.restassured.RestAssured.*;
 

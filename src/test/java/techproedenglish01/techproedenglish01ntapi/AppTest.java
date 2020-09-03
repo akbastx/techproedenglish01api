@@ -1,4 +1,4 @@
-package techproedenglish01.techproedenglish01api;
+package techproedenglish01.techproedenglish01ntapi;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertFalse;
