@@ -1,7 +1,5 @@
 package techproedenglish01.techproedenglish01ntapi;
 
-import static org.junit.Assert.assertEquals;
-
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
