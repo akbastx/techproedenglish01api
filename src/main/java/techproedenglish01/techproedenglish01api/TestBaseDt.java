@@ -11,6 +11,7 @@ public class TestBaseDt {
 	protected RequestSpecification spec02;
 	protected RequestSpecification spec03;
 	protected RequestSpecification spec04;
+
 	
 	@Before
 	public void setUp01() {
@@ -39,5 +40,6 @@ public class TestBaseDt {
 				             setBaseUri("http://dummy.restapiexample.com/api/v1").
 				             build();
 	}
+	
 
 }

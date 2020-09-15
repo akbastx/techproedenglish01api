@@ -1,12 +1,12 @@
 package techproedenglish01api.techproedenglish01dtapi;
 
-import org.hamcrest.Matchers;
-import org.json.JSONObject;
-import org.junit.Test;
-import static io.restassured.RestAssured.*;
-
 import java.util.HashMap;
 import java.util.Map;
+import static io.restassured.RestAssured.*;
+
+import org.hamcrest.Matchers;
+import org.junit.Test;
+import org.testng.asserts.SoftAssert;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -15,49 +15,60 @@ import techproedenglish01.techproedenglish01api.TestBaseDt;
 public class PutRequest01 extends TestBaseDt {
 	
 	/*
-	 When 
-	   I send PUT Request to http://dummy.restapiexample.com/api/v1/update/2
-	 Then 
-	   Status code is 200
-	   Content Type is "application/json"
-	   "status" key has value "success"
-	   "message" key has value "Successfully! Record has been updated."
-	   
-	 Note: Create Request Body in 3 different ways  
+			 For PUT Request(Full Update) we need;
+			 1)Endpoint ==> Mandatory
+			 2)Request Body ==> Mandatory
+			 3)Authorization ==> It depends on the API
+			 4)Headers ==> It depends on the API
 	 */
+
+	/*
+		 When 
+		   I send PUT Request to http://dummy.restapiexample.com/api/v1/update/2
+		 Then 
+		   Status code is 200
+		   Content Type is "application/json"
+		   "status" key has value "success"
+		   "message" key has value "Successfully! Record has been updated."
+		   
+		 Note: Create Request Body in 3 different ways  
+	*/
 	
 	@Test
 	public void put01() {
 		
-		spec04.pathParams("update","update",
-				          "id", 3);
+		spec04.pathParams("function", "update",
+				          "id", 2);
 		
-		//1.Way: To create Request Body use String variable
-		//String reqBody = "{\"name\":\"test\",\"salary\":\"123\",\"age\":\"23\"}";
+		//Use Map to create Request Body
+		Map<String, String> reqBody = new HashMap<>();
+		reqBody.put("name", "Selim Ceren");
+		reqBody.put("salary", "8888888");
+		reqBody.put("age", "87");
 		
-		//2.Way: To create Request Body use JSONObject Class
-		//JSONObject reqBody = new JSONObject();
-		//reqBody.put("name", "Suleyman");
-		//reqBody.put("salary", "111");
-		//reqBody.put("age", "33");
-		
-		//3.Way: To create Request Body use HashMap
-		Map<String, Object> reqBody = new HashMap<>();
-		reqBody.put("name", "Suleyman");
-		reqBody.put("salary", "111");
-		reqBody.put("age", "33");
-		
-		Response response = given().spec(spec04).body(reqBody.toString()).when().put("/{update}/{id}");
+		Response response = given().spec(spec04).body(reqBody).when().put("/{function}/{id}");
 		response.prettyPrint();
 		
+		//Hard assertion for all steps
 		response.
-		     then().
-		     assertThat().
-		     statusCode(200).
-		     contentType(ContentType.JSON).
-		     body("status", Matchers.equalTo("success"),
-		    	  "message", Matchers.equalTo("Successfully! Record has been updated."));
-	}
+			then().
+			assertThat().
+			statusCode(200).
+			contentType(ContentType.JSON).
+			body("status", Matchers.equalTo("success"),
+				 "message", Matchers.equalTo("Successfully! Record has been updated."));
+		
+		//Soft Assertion together with De-Serialization
+		HashMap<String, Object> map = response.as(HashMap.class);
+		System.out.println(map);
+		
+		SoftAssert softAssert = new SoftAssert();
 
+		softAssert.assertEquals(map.get("status"), "success");
+		softAssert.assertEquals(map.get("message"),"Successfully! Record has been updated.");
+
+		softAssert.assertAll();
+		
+	}
 
 }
