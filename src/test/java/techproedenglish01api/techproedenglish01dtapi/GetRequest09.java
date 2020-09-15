@@ -31,7 +31,9 @@ public class GetRequest09 extends TestBaseDt {
 				            "totalprice", 2);
 		
 		Response response = given().
-				               spec(spec02).when().get();
+				               spec(spec02).
+				            when().
+				               get();
 		response.prettyPrint();
 		
 		//Assert that the data whose first name is Jim exists among the data

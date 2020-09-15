@@ -2,9 +2,7 @@ package techproedenglish01.techproedenglish01ntapi;
 
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
-
 import com.google.gson.Gson;
-
 import io.restassured.response.Response;
 import techproedenglish01.techproedenglish01api.TestBase;
 import static io.restassured.RestAssured.*;
@@ -45,27 +43,14 @@ public class GetRequest11 extends TestBase {
 		softAssert.assertEquals(map.get("title"),"quis ut nam facilis et officia qui");
 		
 		//Assert that "userId" is 1 by using soft assertion
-		softAssert.assertEquals(map.get("userId"),1);
+		softAssert.assertEquals(map.get("userId"),1.0);
 		
 		softAssert.assertAll();
 		
 		//How to convert Java Object to Json Data ==> Serialization
 		Gson gson = new Gson();
 		System.out.println(gson.toJson(map));
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 
 }

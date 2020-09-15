@@ -23,7 +23,7 @@ public class GetRequest02 {
 	@Test
 	public void get01() {
 		
-		Response response = given().when().get("https://restful-booker.herokuapp.com/booking/1001");
+		Response response = given().when().get("https://restful-booker.herokuapp.com/booking/3");
 		response.prettyPrint();
 		
 		response.then().assertThat().statusCode(404);//1. Way to assert status code
