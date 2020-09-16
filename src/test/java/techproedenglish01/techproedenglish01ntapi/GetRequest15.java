@@ -2,7 +2,6 @@ package techproedenglish01.techproedenglish01ntapi;
 
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
-
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import techproedenglish01.techproedenglish01api.TestBase;

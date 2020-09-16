@@ -9,6 +9,7 @@ public class TestBase {
 	protected RequestSpecification spec01;
 	protected RequestSpecification spec02;
 	protected RequestSpecification spec03;
+	protected RequestSpecification spec04;
 	
 	@Before
 	public void setUp01() {
@@ -30,4 +31,18 @@ public class TestBase {
 				            setBaseUri("http://dummy.restapiexample.com/api/v1/employees").
 				            build();
 	}
+	
+	@Before
+	public void setUp04() {
+		spec04 = new RequestSpecBuilder().
+				            setBaseUri("http://dummy.restapiexample.com/api/v1").
+				            build();
+	}
+	
+	
+	
+	
+	
+	
+	
 }
