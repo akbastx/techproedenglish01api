@@ -88,8 +88,8 @@ public class Booking {
 //					+ ", depositpaid=" + depositpaid + ", bookingdates=" + bookingdates + ", additionalneeds="
 //					+ additionalneeds + "]";
 		//last coppy
-		//edited one more time
-		//......
+		//edited third time
+	
 
 
 	}
