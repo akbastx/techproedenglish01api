@@ -89,7 +89,7 @@ public class Booking {
 //					+ additionalneeds + "]";
 		//last coppy
 		//edited one more time
-		//regre
+		//......
 
 
 	}
