@@ -82,6 +82,14 @@ public class Booking {
 		return "Booking [firstname=" + firstname + ", lastname=" + lastname + ", totalprice=" + totalprice
 				+ ", depositpaid=" + depositpaid + ", bookingdates=" + bookingdates + ", additionalneeds="
 				+ additionalneeds + "]";
+//		@Override
+//		public String toString() {
+//			return "Booking [firstname=" + firstname + ", lastname=" + lastname + ", totalprice=" + totalprice
+//					+ ", depositpaid=" + depositpaid + ", bookingdates=" + bookingdates + ", additionalneeds="
+//					+ additionalneeds + "]";
+		//last coppy
+
+
 	}
 
 }
